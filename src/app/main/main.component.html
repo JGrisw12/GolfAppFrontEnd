@@ -1,0 +1,24 @@
+<div>
+  <form>
+    <label>Course Name</label>
+    <input [(ngModel)]="newCourseName" [ngModelOptions]="{standalone: true} " type="text">
+    <button (click)="test()">Submit</button>
+  </form>
+  <button (click)="runMethod()">
+    Show All Courses
+  </button>
+
+      <table *ngIf="showCourse" class="table table-striped table-bordered" style="width:100%">
+          <thead>
+              <th>Request Date</th>
+              <th>Skill Requested</th>
+              <th>Skill Requested</th>
+          </thead>
+          <tr *ngFor="let responses of listCourses">
+              <td> {{ responses?.courseName }} </td>
+              <td> {{ responses?.courseDistance }} </td>
+              <td> {{ responses?.golfers[0].name }} </td>
+          </tr>
+      </table>
+</div>
+<app-table-component></app-table-component>
